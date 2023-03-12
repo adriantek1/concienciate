@@ -23,6 +23,28 @@ export default class PSHManager
         return storedPSH;
 	}
 
+    public async addDays (id: string, day: string)
+    {
+		let storedPSH: any = await PSH.findOne({
+            id: id,
+        });
+    
+        if (!storedPSH)
+        {
+            return false;
+        }
+    
+        try
+        {
+            storedPSH.days.push(day);
+            return true;
+        }
+        catch(err: any)
+        {
+            return false;
+        }
+	}
+
     public async getAll (): Promise<string[] | boolean>
     {
 		let storedPSH: any = await PSH.find({});
