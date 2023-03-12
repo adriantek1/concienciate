@@ -111,10 +111,10 @@
 
     <% for(var i=0; i<9; i++) %>
     <% { %>
-        <% const storedStation = await StationManager.get(i); %>
-
         <div id="station0" class="tabcontent">
             <% (async() => { %>
+                <% const storedStation = await StationManager.get(i); %>
+
                 <% for (const usuario of storedStation.usuarios) %>
                 <% { %>
                     <% const data = await PSHManager.get(usuario); %>
