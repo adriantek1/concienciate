@@ -106,13 +106,13 @@
         }
     </style>
 
-    <% import StationManager from '../../Database/Managers/StationManager'; %>
-    <% import PSHManager from '../../Database/Managers/PSHManager'; %>
-
     <% for(var i=0; i<9; i++) %>
     <% { %>
         <div id="station0" class="tabcontent">
             <% (async() => { %>
+                <% const StationManager = await import('../../Database/Managers/StationManager'); %>
+                <% const PSHManager = await import('../../Database/Managers/PSHManager'); %>
+
                 <% const storedStation = await StationManager.get(i); %>
 
                 <% for (const usuario of storedStation.usuarios) %>
