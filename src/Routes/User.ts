@@ -7,13 +7,13 @@ const router = express.Router();
 
 export default router;
 
-router.use(function timeLog(req: Request, res: Response, next: any)
+router.use((req: Request, res: Response, next: any) =>
 {
     console.log('Time: ', Date.now());
     next();
 });
 
-router.get(function(req: Request, res: Response)
+router.get('/', (req: Request, res: Response) =>
 {
     const result: boolean = await database.User.get(username, password);
 
@@ -27,21 +27,19 @@ router.get(function(req: Request, res: Response)
     }
 });
 
-router.post(function(req: Request, res: Response)
+router.post('/', (req: Request, res: Response) =>
 {
-    const result: boolean = await database.User.create(username, name);
+    const result: boolean = await database.User.create(req.params.username, req.params.name);
 
     if (result === true)
     {
         return res.send({ success: true });
     }
-    else if (result !== true)
-    {
-        return res.send({ success: false });
-    }
+    
+    return res.send({ success: false });
 });
 
-router.put(function(req: Request, res: Response)
+router.put('/', (req: Request, res: Response) =>
 {
     // Actualizar usuario
 });
