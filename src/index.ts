@@ -24,7 +24,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join('src', 'views'));
 app.use('/user', userRouter);
 
-app.get('/', (req: Request, res: Response) =>
+app.get('/', async (req: Request, res: Response) =>
 {
     res.render('./pages/index');
 
@@ -47,8 +47,6 @@ app.get('/', (req: Request, res: Response) =>
 app.post('/save', async (req: Request, res: Response) =>
 {
     res.redirect('/');
-
-    console.log(req.body);
 
     let id: string = '';
     let days: string[] = [];
