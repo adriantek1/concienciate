@@ -13,9 +13,9 @@ router.use((req: Request, res: Response, next: any) =>
     next();
 });
 
-router.get('/', (req: Request, res: Response) =>
+router.get('/', async (req: Request, res: Response) =>
 {
-    const result: boolean = await database.User.get(username, password);
+    const result: boolean = await database.User.get(req.params.username, req.params.password);
 
     if (result !== false)
     {
@@ -27,7 +27,7 @@ router.get('/', (req: Request, res: Response) =>
     }
 });
 
-router.post('/', (req: Request, res: Response) =>
+router.post('/', async (req: Request, res: Response) =>
 {
     const result: boolean = await database.User.create(req.params.username, req.params.name);
 
@@ -39,7 +39,7 @@ router.post('/', (req: Request, res: Response) =>
     return res.send({ success: false });
 });
 
-router.put('/', (req: Request, res: Response) =>
+router.put('/', async (req: Request, res: Response) =>
 {
     // Actualizar usuario
 });
