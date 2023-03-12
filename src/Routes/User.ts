@@ -1,6 +1,6 @@
 import express, { json, Express, Request, Response } from 'express';
 
-import Database from './Database/Database';
+import Database from '../Database/Database';
 const database: Database = new Database();
 
 const router = express.Router();
