@@ -3,15 +3,15 @@ import express, { Router, json, Express, Request, Response } from 'express';
 import Database from '../Database/Database';
 const database: Database = new Database();
 
-export const router = Router();
+export const userRouter = Router();
 
-router.use((req: Request, res: Response, next: any) =>
+userRouter.use((req: Request, res: Response, next: any) =>
 {
     console.log('Time: ', Date.now());
     next();
 });
 
-router.get('/', async (req: Request, res: Response) =>
+userRouter.get('/', async (req: Request, res: Response) =>
 {
     const result: boolean = await database.User.get(req.params.username, req.params.password);
 
@@ -25,7 +25,7 @@ router.get('/', async (req: Request, res: Response) =>
     }
 });
 
-router.post('/', async (req: Request, res: Response) =>
+userRouter.post('/', async (req: Request, res: Response) =>
 {
     const result: boolean = await database.User.create(req.params.username, req.params.name);
 
@@ -37,7 +37,7 @@ router.post('/', async (req: Request, res: Response) =>
     return res.send({ success: false });
 });
 
-router.put('/', async (req: Request, res: Response) =>
+userRouter.put('/', async (req: Request, res: Response) =>
 {
     // Actualizar usuario
 });
