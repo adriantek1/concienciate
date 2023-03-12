@@ -108,7 +108,7 @@
 
     <% for(var i=0; i<9; i++) %>
     <% { %>
-        <div id="station0" class="tabcontent">
+        <div id="station<%= i %>" class="tabcontent">
             <% (async() => { %>
                 <% const StationManager = await import('../../Database/Managers/StationManager'); %>
                 <% const PSHManager = await import('../../Database/Managers/PSHManager'); %>
