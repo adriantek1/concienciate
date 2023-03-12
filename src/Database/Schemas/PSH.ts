@@ -4,7 +4,7 @@ export interface PSHType
 {
 	name: string,
     id: string,
-    parada: string,
+    station: string,
 	horas: string,
     days: string[],
 }
@@ -12,7 +12,7 @@ export interface PSHType
 const PSHSchema = new mongoose.Schema<PSHType>({
     name: { type: String },
     id: { type: String },
-    parada: { type: String },
+    station: { type: String },
     horas: { type: String },
     days: { type: [String] },
 });

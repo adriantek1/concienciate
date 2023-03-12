@@ -106,17 +106,17 @@
 
     <div id="station0" class="tabcontent">
         <% const station0 = users.filter(user => { %>
-            <% const inStation0 = "parada" in user && user.parada === '0'; %>
+            <% const inStation0 = "station" in user && user.station === 0; %>
             <% return inStation0; %>
         <% }); %>
-        
+
         <% for (const usuario of station0) { %>
             <h3><%= usuario.name %></h3>
             <form action="/save" method="POST">
                 <% let fecha = new Date(); %>
                 <% let i; %>
                 <% for (i = 0; i < 7; i++) { %>
-                    <input type="checkbox" name="dia<%= a %>_<%= usuario.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                    <input type="checkbox" name="dia<%= i %>_<%= usuario.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
                     <% fecha.setDate(fecha.getDate() + 1); %>
                 <% } %>
                 <input type="submit" value="Guardar">
