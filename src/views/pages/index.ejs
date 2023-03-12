@@ -111,7 +111,7 @@
 
     <% for(var i=0; i<9; i++) %>
     <% { %>
-        <% const storedStation: any = await StationManager.get(i); %>
+        <% const storedStation = await StationManager.get(i); %>
 
         <div id="station0" class="tabcontent">
             <% for (const usuario of storedStation.usuarios) %>
