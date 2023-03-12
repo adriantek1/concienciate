@@ -122,12 +122,14 @@
             <tr>
                 <td>Pedro Sánchez</td>
                 <td>12345678D</td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
+                <form action="/guardar" method="POST">
+                    <% var fecha = new Date(); %>
+                    <% for(var i=0; i<7; i++) { %>
+                      <input type="checkbox" name="dia<%= i %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %><br>
+                      <% fecha.setDate(fecha.getDate() + 1); %>
+                    <% } %>
+                    <input type="submit" value="Guardar">
+                </form>  
             </tr>
             <tr>
                 <td>Margarita Espinosa</td>
