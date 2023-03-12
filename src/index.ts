@@ -22,7 +22,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join('src', 'views'));
-//app.use('/user', User);
+app.use('/user', User);
 
 app.get('/', (req: Request, res: Response) =>
 {

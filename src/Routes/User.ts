@@ -3,9 +3,7 @@ import express, { json, Express, Request, Response } from 'express';
 import Database from '../Database/Database';
 const database: Database = new Database();
 
-const router = express.Router();
-
-export default router;
+export default router = express.Router();
 
 router.use((req: Request, res: Response, next: any) =>
 {
