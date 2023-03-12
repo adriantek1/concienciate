@@ -42,17 +42,17 @@ app.get('/', async (req: Request, res: Response) =>
 
     return res.render('./pages/index',
     {
-        station0 = station0,
-        station1 = station1,
-        station2 = station2,
-        station3 = station3,
-        station4 = station4,
-        station5 = station5,
-        station6 = station6,
-        station7 = station7,
-        station8 = station8,
-        station9 = station9,
-        users = users,
+        station0: station0,
+        station1: station1,
+        station2: station2,
+        station3: station3,
+        station4: station4,
+        station5: station5,
+        station6: station6,
+        station7: station7,
+        station8: station8,
+        station9: station9,
+        users: users,
     });
 });
 
