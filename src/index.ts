@@ -26,10 +26,7 @@ app.use('/user', userRouter);
 
 app.get('/', (req: Request, res: Response) =>
 {
-    res.render('./pages/index',
-    {
-        database: database,
-    });
+    res.render('./pages/index');
 });
 
 app.post('/save', async (req: Request, res: Response) =>
