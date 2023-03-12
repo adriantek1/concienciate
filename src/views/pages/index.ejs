@@ -73,11 +73,12 @@
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
 
+            console.log("station" + station);
             document.getElementById("station" + station).style.display = "block";
             evt.currentTarget.className += " active";
         }
 
-        openStation(event, 0)
+        openStation(event, 0);
     </script>
 
     <div class="tab">
