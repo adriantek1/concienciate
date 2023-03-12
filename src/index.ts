@@ -34,6 +34,16 @@ app.get('/', (req: Request, res: Response) =>
 app.post('/save', (req: Request, res: Response) =>
 {
     console.log(req.body);
+
+    let id: string = '';
+
+    for (const key in req.body)
+    {
+        id = key.split('_')[1];
+    }
+
+    console.log(id);
+    console.log(req.body[0].split('_'));
 });
 
 app.listen(port, () =>
