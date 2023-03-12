@@ -1,9 +1,9 @@
-import express, { json, Express, Request, Response } from 'express';
+import express, { Router, json, Express, Request, Response } from 'express';
 
 import Database from '../Database/Database';
 const database: Database = new Database();
 
-export default router = express.Router();
+export const router = Router();
 
 router.use((req: Request, res: Response, next: any) =>
 {
