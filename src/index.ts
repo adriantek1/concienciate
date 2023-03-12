@@ -2,6 +2,7 @@ import express, { json, Express, Request, Response } from 'express';
 import { urlencoded } from 'body-parser';
 import dotenv from 'dotenv';
 import { userRouter } from './Routes/User'
+import { stationRouter } from './Routes/Station'
 import path from 'path';
 
 import Database from './Database/Database';
@@ -23,6 +24,7 @@ app.use(urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join('src', 'views'));
 app.use('/user', userRouter);
+app.use('/station', stationRouter);
 
 app.get('/', (req: Request, res: Response) =>
 {
