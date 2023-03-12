@@ -20,7 +20,7 @@ const port: any = 2333;
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
-app.use('/user', User);
+//app.use('/user', User);
 
 app.get('/', (req: Request, res: Response) =>
 {
