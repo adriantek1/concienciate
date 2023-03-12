@@ -18,6 +18,7 @@ stationRouter.get('/0', async (req: Request, res: Response) =>
 
 stationRouter.post('/', async (req: Request, res: Response) =>
 {
-    console.log(req);
+    console.log(req.body);
+    console.log(req.params);
     //database.Station.create();
 });
