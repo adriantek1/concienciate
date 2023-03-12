@@ -67,11 +67,13 @@ app.post('/save', async (req: Request, res: Response) =>
         id = key.split('_')[1];
         days.push(req.body[key]);
     }
+    
+    console.log(days);
 
-    for (const day in days)
+    /*for (const day in days)
     {
         await database.PSH.addDay(id, day);
-    }
+    }*/
 });
 
 app.listen(port, () =>

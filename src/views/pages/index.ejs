@@ -110,8 +110,6 @@
             <% return inStation0; %>
         <% }); %>
 
-        <% console.log(station0) %>
-
         <% for (const usuario of station0) { %>
             <h3><%= usuario.name %></h3>
             <form action="/save" method="POST">
