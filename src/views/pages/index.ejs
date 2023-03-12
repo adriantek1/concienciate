@@ -106,7 +106,7 @@
 
     <div id="station0" class="tabcontent">
         <% const station0 = users.filter(user => { %>
-            <% const inStation0 = "station" in user && user.station === 0; %>
+            <% const inStation0 = "station" in user && (user.station === 0 || user.station === '0'); %>
             <% return inStation0; %>
         <% }); %>
 
