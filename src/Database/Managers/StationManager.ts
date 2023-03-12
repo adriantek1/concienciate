@@ -9,36 +9,35 @@ export default class StationManager
         return true;
 	}
 
-	public async get (username: string, password: string)
+	public async get (id: string)
     {
-		let storedUser: any = await User.findOne({
-            username: username,
-            password: password,
+		let storedStation: any = await Station.findOne({
+            id: id,
         });
     
-        if (!storedUser)
+        if (!storedStation)
         {
             return false;
         }
     
-        return storedUser;
+        return storedStation;
 	}
 
     public async getAll (): Promise<string[] | boolean>
     {
-		let storedUsers: any = await User.find({});
+		let storedStations: any = await Station.find({});
     
-        if (!storedUsers)
+        if (!storedStations)
         {
             return false;
         }
 
-        const users: string[] = [];
-        for (const user of storedUsers)
+        const stations: string[] = [];
+        for (const station of storedStations)
         {
-            users.push(user);
+            stations.push(station);
         }
     
-        return users;
+        return stations;
 	}
 }

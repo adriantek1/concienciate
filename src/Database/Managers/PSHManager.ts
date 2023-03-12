@@ -37,6 +37,7 @@ export default class PSHManager
         try
         {
             storedPSH.days.push(day);
+            storedPSH.save();
             return true;
         }
         catch(err: any)
