@@ -15,3 +15,10 @@ stationRouter.get('/0', async (req: Request, res: Response) =>
 {
     res.render('./pages/stations/0');
 });
+
+stationRouter.post('/', async (req: Request, res: Response) =>
+{
+    console.log(req.params);
+    console.log(req.body);
+    //database.Station.create();
+});
