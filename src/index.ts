@@ -31,7 +31,7 @@ app.get('/', (req: Request, res: Response) =>
     res.render('./pages/index');
 });
 
-app.post('/', (req: Request, res: Response) =>
+app.post('/save', (req: Request, res: Response) =>
 {
     console.log(req.body);
 });

@@ -107,46 +107,20 @@
     </style>
 
     <div id="station0" class="tabcontent">
-        <table>
-            <tr>
-                <th>Usuario</th>
-                <th>DNI</th>
-                <th>12/03</th>
-                <th>13/03</th>
-                <th>14/03</th>
-                <th>15/03</th>
-                <th>16/03</th>
-                <th>17/03</th>
-                
-            </tr>
-            <tr>
-                <td>Pedro Sánchez</td>
-                <td>12345678D</td>
-                <form action="/guardar" method="POST">
-                    <% var fecha = new Date(); %>
-                    <% for(var i=0; i<7; i++) { %>
-                      <input type="checkbox" name="dia<%= i %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %><br>
-                      <% fecha.setDate(fecha.getDate() + 1); %>
-                    <% } %>
-                    <input type="submit" value="Guardar">
-                </form>  
-            </tr>
-            <tr>
-                <td>Margarita Espinosa</td>
-                <td>12345678D</td>
-                <td><input type="checkbox" id="delivered12345678B"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-                <td><input type="checkbox" id="delivered12345678D"></td>
-            </tr>
-        </table> 
+        <h3>Margarita Espinosa</h3>
+        <form action="/save" method="POST">
+            <% var fecha = new Date(); %>
+            <% for(var i=0; i<7; i++) { %>
+                <input type="checkbox" name="dia<%= i %>_margarita" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                <% fecha.setDate(fecha.getDate() + 1); %>
+            <% } %>
+            <input type="submit" value="Guardar">
+        </form>
     </div>
 
     <div id="station1" class="tabcontent">
         <h3>Aitor Vaillo</h3>
-        <form action="/guardar" method="POST">
+        <form action="/save" method="POST">
             <% var fecha = new Date(); %>
             <% for(var i=0; i<7; i++) { %>
                 <input type="checkbox" name="dia<%= i %>_aitor" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
