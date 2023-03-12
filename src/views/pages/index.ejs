@@ -93,8 +93,31 @@
         <button class="tablinks" onclick="openStation(event, 9)">Gasolinera (Ctra. de Castilla)</button>
     </div>
     
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
     <div id="station0" class="tabcontent">
-        <h3>Federico Sánchez</h3>
+        <table>
+            <tr>
+                <th>Usuario</th>
+                <th>DNI</th>
+                <th>Entregado (12/03/2023)</th>
+            </tr>
+            <tr>
+                <td>Pedro Sánchez</td>
+                <td>12345678D</td>
+                <td><input type="checkbox" id="delivered1"></td>
+            </tr>
+            <tr>
+                <td>Margarita Espinosa</td>
+                <td>12345678D</td>
+                <td><input type="checkbox" id="delivered2"></td>
+            </tr>
+        </table> 
     </div>
 
     <div id="station1" class="tabcontent">
