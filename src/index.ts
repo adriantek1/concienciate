@@ -27,6 +27,21 @@ app.use('/user', userRouter);
 app.get('/', (req: Request, res: Response) =>
 {
     res.render('./pages/index');
+
+    return res.render('./pages/index',
+    {
+        station0: (await database.Station.get(0)),
+        station1: (await database.Station.get(1)),
+        station2: (await database.Station.get(2)),
+        station3: (await database.Station.get(3)),
+        station4: (await database.Station.get(4)),
+        station5: (await database.Station.get(5)),
+        station6: (await database.Station.get(6)),
+        station7: (await database.Station.get(7)),
+        station8: (await database.Station.get(8)),
+        station9: (await database.Station.get(9)),
+        users: (await database.PSH.getAll())
+    });
 });
 
 app.post('/save', async (req: Request, res: Response) =>

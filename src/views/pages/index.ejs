@@ -104,30 +104,21 @@
         }
     </style>
 
+    <% console.log(users) %>
+
     <div id="station0" class="tabcontent">
-        <% (async() => { %>
-            <% const StationManager = await import('../../Database/Managers/StationManager'); %>
-            <% const PSHManager = await import('../../Database/Managers/PSHManager'); %>
-
-            <% const storedStation = await StationManager.get(0); %>
-            <% console.log(storedStation); %>
-
-            <% for (const usuario of storedStation.usuarios) %>
-            <% { %>
-                <% console.log(usuario); %>
-                <% const data = await PSHManager.get(usuario); %>
-    
-                <h3><%= data.name %></h3>
-                <form action="/save" method="POST">
-                    <% var fecha = new Date(); %>
-                    <% for(var a=0; a<7; a++) { %>
-                        <input type="checkbox" name="dia<%= a %>_<%= data.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
-                        <% fecha.setDate(fecha.getDate() + 1); %>
-                    <% } %>
-                    <input type="submit" value="Guardar">
-                </form>
-            <% } %>
-        <% }) %>
+        <% for (const usuario of station0.usuarios) %>
+        <% { %>    
+            <h3><%= data.name %></h3>
+            <form action="/save" method="POST">
+                <% var fecha = new Date(); %>
+                <% for(var a=0; a<7; a++) { %>
+                    <input type="checkbox" name="dia<%= a %>_<%= data.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                    <% fecha.setDate(fecha.getDate() + 1); %>
+                <% } %>
+                <input type="submit" value="Guardar">
+            </form>
+        <% } %>
     </div>
 
     <div id="station1" class="tabcontent">
