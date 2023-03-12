@@ -28,19 +28,31 @@ app.get('/', async (req: Request, res: Response) =>
 {
     res.render('./pages/index');
 
+    const station0 = (await database.Station.get(0));
+    const station1 = (await database.Station.get(1));
+    const station2 = (await database.Station.get(2));
+    const station3 = (await database.Station.get(3));
+    const station4 = (await database.Station.get(4));
+    const station5 = (await database.Station.get(5));
+    const station6 = (await database.Station.get(6));
+    const station7 = (await database.Station.get(7));
+    const station8 = (await database.Station.get(8));
+    const station9 = (await database.Station.get(9));
+    const users = (await database.PSH.getAll());
+
     return res.render('./pages/index',
     {
-        station0: (await database.Station.get(0)),
-        station1: (await database.Station.get(1)),
-        station2: (await database.Station.get(2)),
-        station3: (await database.Station.get(3)),
-        station4: (await database.Station.get(4)),
-        station5: (await database.Station.get(5)),
-        station6: (await database.Station.get(6)),
-        station7: (await database.Station.get(7)),
-        station8: (await database.Station.get(8)),
-        station9: (await database.Station.get(9)),
-        users: (await database.PSH.getAll())
+        station0 = station0,
+        station1 = station1,
+        station2 = station2,
+        station3 = station3,
+        station4 = station4,
+        station5 = station5,
+        station6 = station6,
+        station7 = station7,
+        station8 = station8,
+        station9 = station9,
+        users = users,
     });
 });
 
