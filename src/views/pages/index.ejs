@@ -112,12 +112,12 @@
         <% }); %>
 
         <% for (const usuario of station0) %>
-        <% { %>    
-            <h3><%= data.name %></h3>
+        <% { %>
+            <h3><%= usuario.name %></h3>
             <form action="/save" method="POST">
                 <% var fecha = new Date(); %>
                 <% for(var a=0; a<7; a++) { %>
-                    <input type="checkbox" name="dia<%= a %>_<%= data.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                    <input type="checkbox" name="dia<%= a %>_<%= usuario.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
                     <% fecha.setDate(fecha.getDate() + 1); %>
                 <% } %>
                 <input type="submit" value="Guardar">
