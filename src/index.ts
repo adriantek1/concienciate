@@ -43,8 +43,8 @@ app.get('/', async (req: Request, res: Response) =>
     console.log(users);
 
     return res.render('./pages/index', {
-        station0: station0,
-        station1: station1,
+        station0,
+        station1,
         /*station2: station2,
         station3: station3,
         station4: station4,
@@ -53,7 +53,7 @@ app.get('/', async (req: Request, res: Response) =>
         station7: station7,
         station8: station8,
         station9: station9,*/
-        users: users,
+        users,
     });
 });
 
