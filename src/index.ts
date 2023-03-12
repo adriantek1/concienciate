@@ -26,8 +26,6 @@ app.use('/user', userRouter);
 
 app.get('/', async (req: Request, res: Response) =>
 {
-    res.render('./pages/index');
-
     const station0 = (await database.Station.get(0));
     const station1 = (await database.Station.get(1));
     /*const station2 = (await database.Station.get(2));
