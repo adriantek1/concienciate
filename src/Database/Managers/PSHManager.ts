@@ -23,7 +23,7 @@ export default class PSHManager
         return storedPSH;
 	}
 
-    public async addDays (id: string, day: string)
+    public async addDay (id: string, day: string)
     {
 		let storedPSH: any = await PSH.findOne({
             id: id,

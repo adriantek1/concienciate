@@ -1,14 +1,20 @@
 import mongoose from 'mongoose';
 
+import PSHManager from './Managers/PSHManager';
+import StationManager from './Managers/StationManager';
 import UserManager from './Managers/UserManager';
 
 export default class Database
 {
     constructor()
     {
+        this.PSH = new PSHManager();
+        this.Station = new StationManager();
         this.User = new UserManager();
     }
 
+    PSH: PSHManager;
+    Station: StationManager;
     User: UserManager;
 
     public async connect (): Promise<boolean>

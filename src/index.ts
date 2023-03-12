@@ -31,8 +31,10 @@ app.get('/', (req: Request, res: Response) =>
     res.render('./pages/index');
 });
 
-app.post('/save', (req: Request, res: Response) =>
+app.post('/save', async (req: Request, res: Response) =>
 {
+    res.redirect('/');
+
     console.log(req.body);
 
     let id: string = '';
@@ -44,7 +46,10 @@ app.post('/save', (req: Request, res: Response) =>
         days.push(req.body[key]);
     }
 
-    console.log(days);
+    for (const day in days)
+    {
+        await database.PSH.addDay(id, day);
+    }
 });
 
 app.listen(port, () =>
