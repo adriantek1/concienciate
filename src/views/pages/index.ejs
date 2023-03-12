@@ -116,7 +116,7 @@
             <h3><%= usuario.name %></h3>
             <form action="/save" method="POST">
                 <% let fecha = new Date(); %>
-                <% for (let a = 0; a < 7; a++) { %>
+                <% for (i = 0; i < 7; i++) { %>
                     <input type="checkbox" name="dia<%= a %>_<%= usuario.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
                     <% fecha.setDate(fecha.getDate() + 1); %>
                 <% } %>
@@ -124,7 +124,7 @@
             </form>
         <% } %>
     </div>
-    
+
     <!--
     <div id="station1" class="tabcontent">
         <h3>Aitor Vaillo</h3>
