@@ -7,7 +7,6 @@ export const userRouter = Router();
 
 userRouter.use((req: Request, res: Response, next: any) =>
 {
-    console.log('Time: ', Date.now());
     next();
 });
 

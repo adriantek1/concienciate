@@ -38,8 +38,6 @@ app.get('/', async (req: Request, res: Response) =>
     const station9 = (await database.Station.get(9));
     const users = (await database.PSH.getAll());
 
-    console.log(users);
-
     return res.render('./pages/index', {
         station0,
         station1,
@@ -67,13 +65,18 @@ app.post('/save', async (req: Request, res: Response) =>
         id = key.split('_')[1];
         days.push(req.body[key]);
     }
-    
-    console.log(days);
 
-    /*for (const day in days)
+    if (days.length = 1)
     {
-        await database.PSH.addDay(id, day);
-    }*/
+        await database.PSH.addDay(id, days[0]);
+    }
+    else
+    {
+        for (const day in days)
+        {
+            await database.PSH.addDay(id, day);
+        }
+    }
 });
 
 app.listen(port, () =>
