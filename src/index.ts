@@ -19,7 +19,6 @@ dotenv.config();
 const app: Express = express();
 const port: any = 2333;
 
-app.use(express.bodyParser());
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
