@@ -26,7 +26,7 @@ app.set('views', path.join('src', 'views'));
 
 app.get('/', (req: Request, res: Response) =>
 {
-    res.render('pages/index');
+    res.render('./pages/index');
 });
 
 app.listen(port, () =>
