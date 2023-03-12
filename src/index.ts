@@ -1,6 +1,7 @@
 import express, { json, Express, Request, Response } from 'express';
 import { urlencoded } from 'body-parser';
 import dotenv from 'dotenv';
+import * as User from './Routes/User'
 
 import Database from './Database/Database';
 
@@ -19,6 +20,7 @@ const port: any = 2333;
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.use('/user', User);
 
 app.get('/', (req: Request, res: Response) =>
 {
@@ -30,7 +32,3 @@ app.listen(port, () =>
     console.log(`⚡️ [server]: Server is running at http://localhost:${port}`);
     main();
 });
-
-
-const User = require('./Routes/User');
-app.use('/user', User);
