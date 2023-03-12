@@ -1,7 +1,7 @@
 import express, { json, Express, Request, Response } from 'express';
 import { urlencoded } from 'body-parser';
 import dotenv from 'dotenv';
-import * as User from './Routes/User'
+import User from './Routes/User'
 import path from 'path';
 
 import Database from './Database/Database';
