@@ -31,6 +31,11 @@ app.get('/', (req: Request, res: Response) =>
     res.render('./pages/index');
 });
 
+app.post('/', (req: Request, res: Response) =>
+{
+    console.log(req.body);
+});
+
 app.listen(port, () =>
 {
     console.log(`⚡️ [server]: Server is running at http://localhost:${port}`);
