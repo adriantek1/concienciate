@@ -9,7 +9,7 @@ export default class StationManager
         return true;
 	}
 
-	public async get (id: string)
+	public async get (id: number)
     {
 		let storedStation: any = await Station.findOne({
             id: id,

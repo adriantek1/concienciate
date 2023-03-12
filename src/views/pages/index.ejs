@@ -106,18 +106,46 @@
         }
     </style>
 
-    <div id="station0" class="tabcontent">
-        <h3>Margarita Espinosa</h3>
-        <form action="/save" method="POST">
-            <% var fecha = new Date(); %>
-            <% for(var i=0; i<7; i++) { %>
-                <input type="checkbox" name="dia<%= i %>_margarita" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
-                <% fecha.setDate(fecha.getDate() + 1); %>
-            <% } %>
-            <input type="submit" value="Guardar">
-        </form>
-    </div>
+    <!--
+        <div id="station0" class="tabcontent">
+        <% for (const usuario of (await database.Station.get(0)).usuarios) %>
+        <% { %>
+            <% const data = await database.PSH.get(usuario); %>
 
+            <h3><%= data.name %></h3>
+            <form action="/save" method="POST">
+                <% var fecha = new Date(); %>
+                <% for(var i=0; i<7; i++) { %>
+                    <input type="checkbox" name="dia<%= i %>_<%= data.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                    <% fecha.setDate(fecha.getDate() + 1); %>
+                <% } %>
+                <input type="submit" value="Guardar">
+            </form>
+        <% } %>
+    </div>
+    -->
+
+    <% for(var i=0; i<9; i++) %>
+    <% { %>
+        <div id="station<%= i %>" class="tabcontent">
+            <% for (const usuario of (await database.Station.get(0)).usuarios) %>
+            <% { %>
+                <% const data = await database.PSH.get(usuario); %>
+    
+                <h3><%= data.name %></h3>
+                <form action="/save" method="POST">
+                    <% var fecha = new Date(); %>
+                    <% for(var a=0; a<7; a++) { %>
+                        <input type="checkbox" name="dia<%= a %>_<%= data.id %>" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                        <% fecha.setDate(fecha.getDate() + 1); %>
+                    <% } %>
+                    <input type="submit" value="Guardar">
+                </form>
+            <% } %>
+        </div>
+    <% } %>
+
+    <!--
     <div id="station1" class="tabcontent">
         <h3>Aitor Vaillo</h3>
         <form action="/save" method="POST">
@@ -132,10 +160,26 @@
 
     <div id="station2" class="tabcontent">
         <h3>Antonio Parrales</h3>
+        <form action="/save" method="POST">
+            <% var fecha = new Date(); %>
+            <% for(var i=0; i<7; i++) { %>
+                <input type="checkbox" name="dia<%= i %>_antonio" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                <% fecha.setDate(fecha.getDate() + 1); %>
+            <% } %>
+            <input type="submit" value="Guardar">
+        </form> 
     </div>
 
     <div id="station3" class="tabcontent">
         <h3>María Esperanza</h3>
+        <form action="/save" method="POST">
+            <% var fecha = new Date(); %>
+            <% for(var i=0; i<7; i++) { %>
+                <input type="checkbox" name="dia<%= i %>_maria" value="<%= fecha.toISOString().slice(0,10) %>"> <%= fecha.toLocaleDateString() %> |
+                <% fecha.setDate(fecha.getDate() + 1); %>
+            <% } %>
+            <input type="submit" value="Guardar">
+        </form> 
     </div>
 
     <div id="station4" class="tabcontent">
@@ -161,6 +205,7 @@
     <div id="station9" class="tabcontent">
         <h3>No sé que más nombres poner x6</h3>
     </div>
+    -->
 </main>
 
 <footer>
