@@ -40,8 +40,9 @@ app.get('/', async (req: Request, res: Response) =>
     const station9 = (await database.Station.get(9));
     const users = (await database.PSH.getAll());
 
-    return res.render('./pages/index',
-    {
+    console.log(users);
+
+    return res.render('./pages/index', {
         station0: station0,
         station1: station1,
         station2: station2,
