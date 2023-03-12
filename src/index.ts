@@ -2,6 +2,7 @@ import express, { json, Express, Request, Response } from 'express';
 import { urlencoded } from 'body-parser';
 import dotenv from 'dotenv';
 import * as User from './Routes/User'
+import path from 'path';
 
 import Database from './Database/Database';
 
@@ -20,6 +21,7 @@ const port: any = 2333;
 app.use(json());
 app.use(urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
+app.set('views', path.join('src', 'views'));
 //app.use('/user', User);
 
 app.get('/', (req: Request, res: Response) =>
