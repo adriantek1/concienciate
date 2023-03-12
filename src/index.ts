@@ -28,14 +28,14 @@ app.get('/', async (req: Request, res: Response) =>
 {
     const station0 = (await database.Station.get(0));
     const station1 = (await database.Station.get(1));
-    /*const station2 = (await database.Station.get(2));
+    const station2 = (await database.Station.get(2));
     const station3 = (await database.Station.get(3));
     const station4 = (await database.Station.get(4));
     const station5 = (await database.Station.get(5));
     const station6 = (await database.Station.get(6));
     const station7 = (await database.Station.get(7));
     const station8 = (await database.Station.get(8));
-    const station9 = (await database.Station.get(9));*/
+    const station9 = (await database.Station.get(9));
     const users = (await database.PSH.getAll());
 
     console.log(users);
@@ -43,14 +43,14 @@ app.get('/', async (req: Request, res: Response) =>
     return res.render('./pages/index', {
         station0,
         station1,
-        /*station2: station2,
-        station3: station3,
-        station4: station4,
-        station5: station5,
-        station6: station6,
-        station7: station7,
-        station8: station8,
-        station9: station9,*/
+        station2,
+        station3,
+        station4,
+        station5,
+        station6,
+        station7,
+        station8,
+        station9,
         users,
     });
 });

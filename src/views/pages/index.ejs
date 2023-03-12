@@ -104,12 +104,12 @@
         }
     </style>
 
-    <% const station0 = users.filter(user => { %>
-        <% const inStation0 = "parada" in producto && user.parada === '0'; %>
-        <% return inStation0; %>
-    <% }); %>
-
     <div id="station0" class="tabcontent">
+        <% const station0 = users.filter(user => { %>
+            <% const inStation0 = "parada" in user && user.parada === '0'; %>
+            <% return inStation0; %>
+        <% }); %>
+        
         <% for (const usuario of station0) { %>
             <h3><%= usuario.name %></h3>
             <form action="/save" method="POST">
