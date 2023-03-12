@@ -114,6 +114,7 @@
                 <% const PSHManager = await import('../../Database/Managers/PSHManager'); %>
 
                 <% const storedStation = await StationManager.get(i); %>
+                <% console.log(storedStation); %>
 
                 <% for (const usuario of storedStation.usuarios) %>
                 <% { %>
