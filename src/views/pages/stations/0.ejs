@@ -19,16 +19,21 @@
         <h3>Paco el chocolatero</h3>
         <p><input type="checkbox" id="delivered"></p>
 
-        <% const checkbox = document.getElementById('delivered') %>
+        <script>
+            const checkbox = document.getElementById('delivered')
 
-        <% checkbox.addEventListener('change', (event) => { %>
-            <% if (event.currentTarget.checked) { %>
-                <% alert('checked'); %>
-            <% } else { %>
-            <% alert('not checked'); %>
-            <% } %>
-        <% }) %>
-        
+            checkbox.addEventListener('change', (event) =>
+            {
+                if (event.currentTarget.checked)
+                {
+                    alert('checked');
+                }
+                else
+                {
+                    alert('not checked');
+                }
+            })
+        </script>
     </div>
 </main>
 
