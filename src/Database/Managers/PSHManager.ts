@@ -11,9 +11,7 @@ export default class PSHManager
 
 	public async get (id: string)
     {
-		let storedPSH: any = await PSH.findOne({
-            id: id,
-        });
+		let storedPSH: any = await PSH.findOne({ id: id });
     
         if (!storedPSH)
         {
@@ -25,9 +23,7 @@ export default class PSHManager
 
     public async addDay (id: string, day: string)
     {
-		let storedPSH: any = await PSH.findOne({
-            id: id,
-        });
+		let storedPSH: any = await PSH.findOne({ id: id });
     
         if (!storedPSH)
         {

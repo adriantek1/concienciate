@@ -11,9 +11,7 @@ export default class StationManager
 
 	public async get (id: number)
     {
-		let storedStation: any = await Station.findOne({
-            id: id,
-        });
+		let storedStation: any = await Station.findOne({ id: id });
     
         if (!storedStation)
         {

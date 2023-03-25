@@ -23,13 +23,3 @@ PSHRouter.get('/:id', async (req: Request, res: Response) =>
         return res.send({ success: false });
     }
 });
-
-PSHRouter.post('/', async (req: Request, res: Response) =>
-{
-    // Crear usuario
-});
-
-PSHRouter.put('/', async (req: Request, res: Response) =>
-{
-    // Actualizar usuario
-});
