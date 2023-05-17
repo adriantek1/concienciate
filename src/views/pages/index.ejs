@@ -104,28 +104,6 @@
         }
     </style>
 
-    <script>
-        async function saveOfflineData(data)
-        {
-            if (!navigator.onLine)
-            {
-                const existingData = JSON.parse(localStorage.getItem('offlineData') || '[]');
-                localStorage.setItem('offlineData', JSON.stringify([...existingData, data]));
-            }
-            else if (navigator.onLine)
-            {
-                await fetch('/save', {
-                    method: 'POST',
-                    headers:
-                    {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-            }
-        }
-    </script>
-
     <div id="station0" class="tabcontent">
         <% const station0 = users.filter(user => { %>
             <% const inStation0 = "station" in user && (user.station === 0 || user.station === '0'); %>
@@ -134,7 +112,7 @@
 
         <% for (const usuario of station0) { %>
             <h3><%= usuario.name %></h3>
-            <form action="saveOfflineData()" method="POST">
+            <form action="/save" method="POST">
                 <% let fecha = new Date(); %>
                 <% let i; %>
                 <% for (i = 0; i < 7; i++) { %>
